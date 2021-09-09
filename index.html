@@ -1,561 +1,1118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta property="og:title" content="개인정보처리방침 | 삼성전자">
-    <title>개인정보처리방침 | 삼성전자</title>
-    <!-- favicon 적용 -->
-    <!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
-    <link rel="icon" type="image/x-icon" href="https://www.samsung.com/sec/static/_images/favicon.ico"/>
-    <!-- Chrome, Safari, IE -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="description" content="Privacy Notice">
+    <title>Privacy Notice</title>
+    <link rel="apple-touch-icon" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/touch-icon.png">
     <link rel="shortcut icon" type="image/x-icon"
-          href="https://www.samsung.com/sec/static/_images/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+          href="https://images.samsung.com/is/image/samsung/p5/sec/info/privacy/privacy-service-info-icon-health.png">
+    <link rel="stylesheet" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/css/font.css">
+    <link rel="preload" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/back-icon.png"
+          as="image">
+    <link rel="preload" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"
+          as="image">
+    <link rel="preload" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/privacy_icon.png"
+          as="image">
+    <link rel="preload" href="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/up-icon.png"
+          as="image">
+
     <style>
-        html {
-            overflow-y: scroll;
+        * {
+            -webkit-user-select: none;
+            outline-style: none;
+            -webkit-tap-highlight-color: transparent;
+            word-break: keep-all;
+        }
+
+        .item-more-information::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            background: transparent;
         }
 
         body {
-            line-height: 1.75rem;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: relative;
         }
 
-        @media only screen and (min-width: 900px) {
-            body {
-                position: absolute;
-                left: 0;
-                right: 0;
-                width: 900px;
-                margin: auto;
-            }
+        body,
+        p {
+            margin: 0;
         }
 
-        .collapsible {
-            background-color: #656565;
-            color: #ffffff;
-            border: none;
-            border-top: 1px solid #ffffff;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            text-align: left;
-            outline: none;
+        p {
+            word-break: keep-all;
+        }
+
+        #pn-header {
+            height: 24px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-left: 20px;
+        }
+
+        #back-button-div
+        #back-button {
+            width: 24px;
+            height: 24px;
+        }
+
+        #back-button-div {
+            float: left;
+            margin-right: 12px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        #pn-header-title {
+            float: left;
+            height: 28px;
+            font-family: Roboto-Medium;
+            font-size: 21px;
+            color: #010101;
+            font-weight: 500;
+            line-height: 28px;
+        }
+
+        #service-icon-div {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        #service-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        #pn-title {
+            margin-top: 40px;
+            margin-left: 24px;
+            margin-right: 24px;
+            margin-bottom: 48px;
+        }
+
+        #service-name {
+            font-family: SamsungOneKorean700;
+            font-size: 30px;
+            color: #010101;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        #pn-body {
+            margin-left: 24px;
+            margin-right: 24px;
+            margin-bottom: 47px;
+            font-family: SamsungOneKorean300;
             font-size: 15px;
+            color: #252525;
+            letter-spacing: 0;
+            line-height: 20px;
+            font-weight: 200;
         }
 
-        .active, .collapsible:hover {
-            background-color: #8a8a8a;
+        .item-panel {
+            padding-top: 21px;
+            padding-left: 24px;
+            padding-bottom: 21px;
+            padding-right: 24px;
+            border-top: 0.5px solid #E5E5E5;
         }
 
-        .content {
-            padding: 0 18px;
-            background-color: #f9f9f9;
-            display: none;
-            overflow: hidden;
-            padding-bottom: 1em;
-            line-height: 1.6rem;
+        .item-title-icon-panel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
 
-        .arrow {
+        .item-panel:last-child {
+            border-bottom: 0.5px solid #E5E5E5;
+        }
+
+        .item-title-panel {
+            width: calc(100% - 48px);
+            min-height: 21px;
+            float: left;
+            pointer-events: none;
+            margin-right: 24px;
+        }
+
+        .item-title {
+            font-family: SamsungOneKorean700;
+            font-size: 17px;
+            color: #010101;
+            font-weight: 700;
+        }
+
+        .item-icon-panel,
+        .arrow-button {
+            width: 24px;
+            height: 24px;
+        }
+
+        .item-icon-panel {
+            display: table-cell;
+            vertical-align: middle;
             float: right;
-            border: solid black;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-            transform: rotate(-135deg);
-            -webkit-transform: rotate(-135deg);
+            pointer-events: none;
         }
 
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
+        #pn-footer {
+            margin-top: 40px;
+            margin-left: 24px;
+            margin-right: 24px;
+            margin-bottom: 48px;
         }
 
-        table {
-            border: 1px solid #444444;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        th, td {
-            border: 1px solid #444444;
-            padding: 5px;
-        }
-
-        h2 {
+        #pn-footer .date-text {
+            font-family: SamsungOneKorean300;
+            font-weight: 200;
+            font-size: 13px;
+            color: #7C7C7C;
             text-align: center;
         }
 
-        .version {
-            margin-top: 1em;
+        #previous-version {
+            margin-top: 10px;
+            margin-left: 80px;
+            margin-right: 80px;
         }
 
+        #previous-version-button {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            background: #FCFCFC;
+            border: 0.5px solid #777777;
+            border-radius: 16.5px;
+            font-family: SamsungOneKorean500;
+            font-weight: 500;
+            font-size: 13px;
+            color: #252525;
+            text-align: center;
+            line-height: 19px;
+        }
+
+        .item-more-information {
+            transition: max-height 0.4s ease-out;
+            overflow: auto;
+            max-height: 0px;
+        }
+
+        .item-more-information div:last-child {
+            margin-bottom: 27px;
+        }
+
+        .sub-title-1 {
+            font-family: SamsungOneKorean500;
+            font-weight: 500;
+            font-size: 15px;
+            color: #252525;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin-top: 14px;
+        }
+
+        .sub-content-1 {
+            font-family: SamsungOneKorean300;
+            font-weight: 200;
+            font-size: 15px;
+            color: #252525;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin-top: 12px;
+        }
+
+        .sub-content-1.only {
+            margin-top: 14px;
+        }
+
+        .sub-table-1 {
+            margin-top: 24px;
+            margin-bottom: 24px;
+            overflow: auto;
+        }
+
+        .sub-table-1 table {
+            border-collapse: collapse;
+        }
+
+        .sub-table-1 table,
+        .sub-table-1 th,
+        .sub-table-1 td {
+            border: 0.5px solid #505050;
+        }
+
+        .sub-table-1 .th-detail-item {
+            font-family: SamsungOneKorean700;
+            font-weight: 700;
+            font-size: 15px;
+            color: #505050;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 20px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .sub-table-1 .td-detail-item {
+            font-family: SamsungOneKorean700;
+            font-weight: 700;
+            font-size: 15px;
+            color: #505050;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 20px;
+            padding-left: 12px;
+            padding-right: 12px;
+            width: 30%;
+        }
+
+        .sub-table-1 .td-detail-content {
+            padding-top: 14px;
+            padding-left: 12px;
+            padding-right: 14px;
+            padding-bottom: 8px;
+        }
+
+        .sub-table-1 .td-detail-content {
+            font-family: SamsungOneKorean500;
+            font-weight: 400;
+            font-size: 15px;
+            color: #7C7C7C;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin-bottom: 6px;
+        }
+
+        .div-margin-34 {
+            margin-top: 34px;
+        }
+
+        /* phone */
+        @media screen and (max-width: 588px) {
+            #pn-main {
+                min-width: 360px;
+                max-width: 500px;
+                margin: auto;
+            }
+
+            table {
+                width: 500px;
+            }
+
+            table.big {
+                width: 700px;
+            }
+        }
+
+        /* winner, winner2, tablet */
+        @media screen and (min-width: 589px) and (max-width: 710px) {
+            #pn-main {
+                width: 500px;
+                margin: auto;
+            }
+
+            table {
+                max-width: 500px;
+            }
+
+            table.big {
+                width: 700px;
+            }
+        }
+
+        /* tablet, dex, phone landscape */
+        @media screen and (min-width: 711px) and (max-width: 1023px) {
+            #pn-main {
+                width: 640px;
+                margin: auto;
+            }
+
+            table {
+                max-width: 640px;
+            }
+
+            table.big {
+                width: 840px;
+            }
+        }
+
+        /* tablet, dex, phone landscape */
+        @media screen and (min-width: 1024px) {
+            #pn-main {
+                width: 840px;
+                margin: auto;
+            }
+
+            table {
+                max-width: 840px;
+            }
+        }
     </style>
+
 </head>
 <body>
+<div id="pn-header">
+    <div id="back-button-div">
+        <img id="back-button"
+             src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/back-icon.png"></img>
+    </div>
+    <div id="pn-header-title">
+        <span>Samsung Health</span>
+    </div>
+</div>
+<div id="pn-main">
+    <div id="pn-title">
+        <div id="service-icon-div">
+            <img id="service-icon"
+                 src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/privacy_icon.png"></img>
+        </div>
+        <div id="service-name">
+            <p>삼성헬스</p>
+            <p>개인정보처리방침</p>
+        </div>
+    </div>
+    <div id="pn-body">
+        <p>'삼성전자 주식회사'(이하 '회사'라 합니다)는 이용자의 개인정보를 중요시하며, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「개인정보보호법」을 준수하기 위하여 노력하고 있습니다.</p>
+        <br>
+        <p>회사는 개인정보처리방침을 통하여 회사가 이용자로부터 제공받은 개인정보를 어떠한 용도와 방식으로 이용하고 있으며, 개인정보보호를 위해 어떠한 조치를 취하고 있는지 알려드립니다.</p>
+        <br>
+        <p>본 방침은 2021년 4월 5일부터 시행되며, 이를 개정하는 경우 어플리케이션 공지사항(또는 서면 ㆍ 이메일 ㆍ 전화 ㆍ SMS 등의 방법으로 개별공지)을 통하여 공지하겠습니다.</p>
 
-<h2>개인정보처리방침</h2>
-<p>삼성전자(이하 ‘회사’)는 이용자의 개인정보를 안전하게 보호하는데 최우선의 가치를 부여하고 있습니다.
-    <br>회사는 이용자와의 신뢰를 기반으로, 이용자가 제공한 개인정보를 제공 목적에 맞게 적법하게 처리하고, 이용자의 개인정보에 대한 권리와 선택을 보장하며, 안전하게 보호하기 위해 최선을 다하고
-    있습니다.
-    <br>회사는 본 개인정보처리방침을 통해 이용자의 개인정보가 어떤 목적으로 사용되며, 어떻게 보호되는지, 그리고 이용자의 권리와 그 행사 방법 등을 투명하게 알려 드립니다.
-</p>
-
-<button type="button" class="collapsible">1.개인정보 수집 항목 및 수집 방법 <i class="arrow"></i></button>
-<div class="content">
-
-    <h4>(1) 개인정보 수집 항목</h4>
-
-    <p>회사는 최초 회원 가입 또는 서비스 이용 시 이용자로부터 아래와 같은 개인정보를 수집합니다. 회사는 서비스 제공 등을 위해 필요한 최소한의 개인정보를 수집하며, 부가적인
-        개인정보의 수집이 필요한 경우 별도의 선택 동의를 받아 수집합니다.</p>
-
-
-    <div class="scroll_x">
-        <table cellpadding="0" cellspacing="0">
-            <thead>
-            <th>구분</th>
-            <th class="last">자세한 내용</th>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="text-c">① 필수항목</td>
-                <td class="text-l last">-</td>
-            </tr>
-            <tr>
-                <td class="text-c">② 선택항목</td>
-                <td class="text-l last">-</td>
-            </tr>
-            <tr>
-                <td class="text-c">③ 고유식별정보</td>
-                <td class="text-l last">-</td>
-            </tr>
-            <tr>
-                <td class="text-c">④ 민감정보</td>
-                <td class="text-l last">-</td>
-            </tr>
-            <tr>
-                <td class="text-c">⑤ 기타 자동으로 생성/수집되는 개인정보</td>
-                <td class="text-l last">IP주소, 쿠키, MAC 주소, 서비스 이용기록, 방문기록</td>
-            </tr>
-            <tr>
-                <td class="text-c">⑥ 제3자로부터 제공받는 개인정보</td>
-                <td class="text-l last">-</td>
-            </tr>
-            </tbody>
-        </table>
     </div>
 
 
-    <p>※ 회사는 최초 회원 가입 또는 서비스 이용 시 이용자로부터 아래와 같은 개인정보를 수집합니다. 회사는 서비스 제공 등을 위해 필요한 최소한의 개인정보를 수집하며, 부가적인
-        개인정보의 수집이 필요한 경우 별도의 선택 동의를 받아 수집합니다.</p>
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">총칙</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>"개인정보"란 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명, 주민등록번호 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할
+                    수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.</p>
+                <br>
+                <p>회사는 이용자의 개인정보보호를 매우 중요시하며, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「개인정보보호법」 등을 준수하고 있습니다.</p>
+                <br>
+                <p>회사는 본 개인정보처리방침을 통하여 이용자께서 제공하시는 개인정보가 어떠한 용도의 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려 드립니다. 본
+                    개인정보처리방침에서 적시하고 있지 않는, 삼성 계정(Samsung Account) 이용자의 기본적인 개인정보처리방침은 삼성서비스 개인정보처리방침
+                    (https://account.samsung.com/membership/pp) 에 따릅니다.</p>
+                <br>
+                <p>회사는 본 개인정보처리방침을 어플리케이션의 "설정" > "삼성 헬스 정보"에 공개함으로써 이용자께서 언제나 용이하게 보실 수 있도록 조치하고 있습니다.</p>
+                <br>
+                <p>회사는 개인정보처리방침의 지속적인 개선을 위하여 개인정보처리방침을 개정하는데 필요한 절차를 정하고 있습니다. 그리고 개인정보처리방침을 개정하는 경우 버전번호 등을 부여하여 개정된
+                    사항을 쉽게 알아볼 수 있도록 하고 있습니다.</p>
+
+            </div>
+        </div>
+    </div>
 
 
-    <p>※ 회사는 원칙적으로 이용자가 만 14세 미만자일 경우 개인정보를 수집하지 않습니다. 서비스 이용을 위하여 만 14세 미만자의 개인정보를 부득이 수집할 때에는 사전에
-        법정대리인에게 동의를 구하고, 관련 업무가 종료됨과 동시에 해당 정보를 지체 없이 파기하며, 업무가 진행되는 동안 개인정보를 철저히 관리합니다.</p>
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">이용자 및 법정대리인의 권리와 그 행사방법</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>이용자 및 법정대리인은 등록되어 있는 이용자 본인 혹은 당해 만 14세 미만자의 개인정보 관련하여, 언제든지 개인정보 열람/ 정정 ㆍ 삭제/ 처리정지/ 동의 철회를 요청할 수
+                    있습니다.</p>
+                <p>이를 위하여 대표전화(1588-3366) 또는 개인정보 보호책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다.</p>
+                <br>
+                <p>회사는 다음에 해당하는 경우에는 개인정보의 전부 또는 일부에 대하여 열람/ 정정 ㆍ 삭제를 거절할 수 있습니다.</p>
+                <p class="sub-content-1">- 법률에 따라 열람이 금지되거나 제한되는 경우</p>
+                <p>- 다른 사람의 생명 ㆍ 신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</p>
+                <br>
+                <p>이용자가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제3자에게 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미
+                    제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하겠습니다.</p>
+                <br>
+                <p>회사는 이용자 혹은 법정대리인의 요청에 의해 삭제/처리정지된 개인정보는 "6. 개인정보의 보유 및 이용기간"에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록
+                    처리하고 있습니다.</p>
+                <br>
+                <p>이용자의 개인정보를 최신의 상태로 정확하게 입력하여 주시기 바랍니다. 이용자가 입력한 부정확한 정보로 인해 발생하는 사고의 책임은 이용자 자신에게 있으며 타인 정보의 도용 등
+                    허위정보를 입력할 경우 회원자격이 상실될 수 있습니다.</p>
+                <br>
+                <p>이용자는 개인정보를 보호 받을 권리와 함께 스스로를 보호하고 타인의 정보를 침해하지 않을 의무도 가지고 있습니다. 비밀번호를 포함한 이용자의 개인정보가 유출되지 않도록 조심하시고
+                    게시물을 포함한 타인의 개인정보를 훼손하지 않도록 유의해 주십시오. 만약 이 같은 책임을 다하지 못하고 타인의 정보 및 존엄성을 훼손할 시에는 「정보통신망 이용촉진 및 정보보호
+                    등에 관한 법률」 등에 의해 처벌 받을 수 있습니다.</p>
 
-    <h4>(2) 개인정보 수집 방법</h4>
-
-    <p>회사는 다음과 같은 방법으로 개인정보를 수집합니다.</p>
-    <ul>
-        <li>회원 가입 또는 서비스 이용 과정에서 이용자가 직접 제공한 개인정보를 수집</li>
-        <li>서비스 이용 과정에서 앱, 웹사이트 등에서 자동으로 생성된 정보(IP주소, 서비스 이용기록 등)를 수집</li>
-        <li>CS 상담 과정에서 전화, 이메일, 상담게시판, 상담 메뉴 등을 통하여 수집</li>
-        <li>이용자가 참여한 이벤트, 프로모션 등을 통한 수집</li>
-        <li>회사와 제휴한 외부 업체, 단체로부터 이용자 동의 등 적법한 절차에 따라 제공 받아 수집</li>
-    </ul>
+            </div>
+        </div>
+    </div>
 
 
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">개인정보 보호책임자 및 고객 서비스 담당부서 등 안내</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>회사는 이용자의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
+                <br>
+                <p class="sub-title-1">(1) 고객서비스 담당부서</p>
+                <p class="sub-content-1">ㆍ고객서비스 담당부서 : 삼성전자 무선사업부 Global CS운영그룹</p>
+                <p>ㆍ전화 : 1588-3366</p>
+                <p>ㆍ문의처 : appcs.sec@samsung.com</p>
+                <br>
+                <p class="sub-title-1">(2) 개인정보 보호책임자 및 개인정보 보호 업무 담당부서</p>
+                <p class="sub-content-1">ㆍ개인정보 보호책임자 : 개인정보보호사무국장</p>
+                <p>ㆍ관련 업무 담당부서 : 개인정보보호사무국</p>
+                <p>ㆍ전화 : 1588-4730</p>
+                <p>ㆍ문의처 : privacy.sec@samsung.com</p>
+                <br>
+                <p class="sub-title-1">(3) 기타 기관</p>
+                <p class="sub-content-1">이용자는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보 보호책임자 혹은 담당부서로 신고하실 수 있습니다. 회사는
+                    이용자들의 신고사항에 대해 신속하게
+                    충분한 답변을 드릴 것입니다. 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+                <p class="sub-content-1">- 개인정보침해신고센터 (privacy.kisa.or.kr / 국번없이 118)</p>
+                <p>- 대검찰청 사이버수사과 : (국번없이) 1301, cid@spo.go.kr, (www.spo.go.kr)</p>
+                <p>- 경찰청 사이버안전국 (cyberbureau.police.go.kr / 국번없이 182)</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>(정보통신망 이용촉진 및 정보보호 등에 관한 법률 적용대상인 경우에 한하여 적용됩니다)</p>
+                <p class="sub-content-1">회사는 이용자의 정보를 수시로 저장하고 찾아내는 '쿠키(cookie)' 등을 운용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가
+                    이용자의 브라우저에 보내는 아주 작은
+                    텍스트 파일로, 이용자의 컴퓨터 하드디스크 및 모바일 단말기에 저장됩니다.</p>
+                <br>
+                <p class="sub-title-1">(1) 쿠키 등 사용 목적</p>
+                <p class="sub-content-1">자동로그인 기능 구현, 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여
+                    정도 및 방문 회수 파악 등을 통한 타겟
+                    마케팅 및 개인 맞춤 서비스 제공</p>
+                <br>
+                <p class="sub-title-1">(2) 쿠키 설정 거부 방법</p>
+                <p class="sub-content-1">이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다
+                    확인을 거치거나, 아니면 모든 쿠키의
+                    저장을 거부할 수도 있습니다. 단, 이용자께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</p>
+                <p class="sub-content-1">- 쿠키설정 방법 (인터넷 익스플로러8.0을 사용하고 있는 경우) : 「도구」메뉴에서「인터넷옵션」을 선택합니다.「개인정보 탭」을 클릭합니다.
+                    「고급」을 선택하여 본인에게 맞는
+                    쿠키허용 수준을 설정하시면 됩니다.</p>
+                <p>- 받은 쿠키를 보는 방법 (익스플로러11.0을 사용하고 있는 경우) : 「도구」 메뉴에서 「인터넷옵션」 을 선택합니다. 「일반」 탭을 클릭하여 '검색기록' 의 「설정」 으로
+                    들어가서, 「파일보기」 를 통해 확인합니다.</p>
+                <p>- 쿠키 설정 거부 방법 (인터넷 익스플로어 11.0 사용하고 있는 경우) : 「도구」 메뉴에서 「인터넷옵션」 을 선택합니다. 「개인정보 탭」 을 클릭합니다. 「기본값」 을 선택하여
+                    상위레벨로 하여 "모든 쿠키차단" 으로 설정하시면 됩니다.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">수집하는 개인정보의 항목 및 수집방법</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+
+                <p class="sub-title-1">(1) 수집하는 개인정보의 항목</p>
+                <p class="sub-content-1">회사는 최초 회원 가입 또는 서비스 이용 시 이용자로부터 아래와 같은 개인정보를 수집하고 있습니다.</p>
+                <p>개인정보처리방침과 삼성 헬스 내 개인정보 수집 ㆍ 이용 동의와 상충되는 부분이 있다면 삼성 헬스 내 개인정보 수집 ㆍ 이용 동의서의 내용이 우선합니다.</p>
+
+                <p class="sub-title-1 only">가. 필수 항목</p>
+                <p class="sub-content-1">① 삼성 헬스 프로필 정보</p>
+                <p class="sub-content-1">- 성별, 생년월일, 키, 몸무게, 액티비티 레벨, 별명, 프로필 사진</p>
+                <p class="sub-content-1">② 삼성 계정 정보</p>
+                <p class="sub-content-1">- 삼성 계정 ID/단말 ID/메시징 서비스 ID (구글, 애플, 아마존)</p>
+                <p class="sub-content-1">③ 단말 및 어플리케이션 정보</p>
+                <p class="sub-content-1">- 단말정보(단말식별번호 포함), 단말의 펌웨어 버전, 주요 설정값(삼성 계정 설정여부, 서버 동기화 설정여부)</p>
+                <p>- 어플리케이션 내 각종 사용 기록(화면/메뉴 진입, 버튼 선택과 같은 어플리케이션 내 기능 사용, 사용 중 발생하는 오류)</p>
+                <p>- 이용자가 작성한 게시글 등 이용자 활동정보</p>
+                <p>- 앱 버전, 마지막 로그인 일시, 마케팅 수신동의날짜, 국가, 언어, 지역 코드</p>
+                <p class="sub-content-1">④ 연동 악세서리 단말 정보</p>
+                <p class="sub-content-1">- 단말명, 단말모델명, 제조사</p>
+                <p class="sub-content-1">⑤ 소셜 네트워킹 정보(투게더 기능 관련)</p>
+                <p class="sub-content-1">- 전화번호(삼성계정 2단계 인증 전화번호 포함), (연락처 연결 시)연락처에 저장된 이름, 전화번호 정보</p>
+                <p>- 투게더 기능 내 도전 메시지</p>
+                <p class="sub-content-1">※ 삼성 헬스 가입 시 투게더 기능이 활성화되며, 다른 사용자가 귀하의 프로필을 조회하여 귀하의 닉네임, 등록한 프로필 사진, 활동 수준,
+                    걸음 수 등을 확인하고 도전 초대를 할 수
+                    있습니다. 귀하는 언제든지 [삼성헬스 설정] – [투게더] 에서 걸음수 정보의 공개 범위와 도전 초대 받기 허용 범위를 변경할 수 있습니다.</p>
+                <p>※ 투게더 탭에서 연락처 앱 연결 시 단말의 연락처에 저장된 정보(이름, 전화번호)가 동기화됩니다.</p>
+                <p class="sub-content-1">⑥ 삼성헬스와 연동된 제3자 서비스 이용과정에서 생성된 정보(계정 토큰정보 등)</p>
+
+                <p class="sub-title-1 only">나. 선택 항목 (건강정보)</p>
+                <p class="sub-content-1">① 건강 및 웰니스 정보</p>
+                <p class="sub-content-1">- 심박수, 스트레스 레벨, 산소포화도, 혈당, 혈압, 당화혈색소, 체중, 체지방, 골격근량, 근육량, 기초대사량 등</p>
+                <p>- 수면 관련 정보(취침시간, 기상시간, 총 수면시간, 뒤척임 없는 수면시간, 수면효율 등)</p>
+                <p>- 자외선지수, 주변의 온도, 습도, 날씨 등</p>
+                <p>- 각 정보의 생성시각, 측정시각 및 생성앱 ID 등</p>
+                <p class="sub-content-1">② 피트니스 및 영양 정보</p>
+                <p class="sub-content-1">- 목표, 운동 수행정보, 총 걸음수, 걸음 종류(걷기/ 달리기/ 오르내리기), 이동 거리, 이동 속도, 소모칼로리, 걸음, 운동 요약 정보
+                    등</p>
+                <p>- 음식, 물, 섭취정보, 음식 사진 정보, 측정 정보에 대한 태그 등</p>
+                <p class="sub-content-1">③ 건강검진기관으로부터 받은 건강검진 결과를 저장할 경우 수집되는 정보</p>
+                <p class="sub-content-1">- 저장하고자 선택한 문서 및 문서에 포함된 주요 건강검진 데이터 항목 : 키, 몸무게, 허리둘레, 엉덩이둘레, 수축기혈압, 이완기혈압,
+                    체지방량, 체근육량, 1초가 노력성 호기량,
+                    전체 호기량, 총단백질, 알부민, 글로블린, 총빌리루빈, 직접빌리루빈, 간효소(AST), 간효소(ALT), 감마지티피, 알칼리포스파타제, 젖산탈수소효소, 크레아틴인산효소,
+                    공복혈당, 당화혈색소, 아밀라제, 총콜레스테롤, 중성지방, 고밀도 콜레스테롤, 저밀도 콜레스테롤, 호모시스테인, 혈중요소질소, 크레아티닌, 뇨산도, 뇨비중</p>
+                <p>- 자세한 건강검진 데이터 항목은 귀하께서 받으신 건강검진의 종류에 따라 달라질 수 있으니 건강검진 결과서를 참고하세요.</p>
+                <p class="sub-content-1">④ 여성 건강 기능을 사용할 경우 수집되는 정보</p>
+                <p class="sub-content-1">- 생리 주기 및 기간, 생리량, 일일 증상 및 기분, 성관계 여부, 노트 등</p>
+                <p class="sub-content-1">※ 그 밖에 삼성 헬스 내 개별 어플리케이션을 설치하거나 연동 가능한 서비스 기기가 추가될 경우, 별도의 개인정보 수집 ㆍ 이용 동의를 통해
+                    수집되는 개인정보 항목</p>
+                <p>※ 이용자는 별도의 개인정보 수집 ㆍ 이용 및 제공 동의를 통해 삼성 헬스 플랫폼을 사용하는 제3자 어플리케이션에서 삼성 헬스 내의 정보를 연계하여 사용할 수 있습니다.</p>
+                <p>※ 삼성 헬스의 소셜 네트워킹 기능을 이용할 경우 같은 기능을 이용하는 다른 이용자들의 프로필, 운동기록 등을 서로 볼 수 있습니다.</p>
+                <p>※ 회사는 원칙적으로 이용자가 만 14세 미만자일 경우 개인정보를 수집하지 않습니다.</p>
+                <p>부득이 서비스 이용을 위하여 만 14세 미만자의 개인정보를 수집할 때에는, 사전에 법정대리인의 동의를 구하고 관련 업무가 종료됨과 동시에 정보를 지체 없이 파기토록 하겠으며 업무가
+                    진행되는 동안 개인정보를 철저히 관리토록 하겠습니다.</p>
+                <br>
+                <p class="sub-title-1">(2) 개인정보 수집방법</p>
+                <p class="sub-content-1">- 이용자가 서비스 이용 과정에서 직접 입력</p>
+                <p>- 서비스 이용시 기기로부터 측정되거나 자동생성</p>
+                <p>- 파트너 앱으로부터 추가 수집</p>
+                <p>- 서비스 실행시 자동 수집</p>
+
+                <p class="sub-content-1">※ 회사는 이용자께서 회사의 개인정보 수집 ㆍ 이용 동의서 각각의 내용에 대해 "동의" 또는 "동의하지 않음"을 선택할 수 있는 절차를
+                    마련하고 있습니다.</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">개인정보의 수집 및 이용목적</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+            </div>
+
+
+            <div class="sub-table-1">
+                <table>
+                    <tr>
+                        <th class="th-detail-item">목적</th>
+                        <th class="th-detail-item">자세한 내용</th>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-item">① 서비스 개선 등</td>
+                        <td class="td-detail-content">
+                            <p>- 기존 서비스의 개선 및 신규 서비스 개발</p>
+                            <p>- 서비스 이용에 대한 분석 및 통계</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-item">② 서비스 제공</td>
+                        <td class="td-detail-content">
+                            <p>- 이용자 개인의 건강정보를 바탕으로 웰니스 증진을 돕는 보조적 기능</p>
+                            <p>- 이용자 개인의 건강정보를 데이터베이스에 백업하거나, 단말과 연동하는 목적으로 저장 및 활용</p>
+                            <p>- 계정 연동 서비스(랭킹 기능, 플랫폼 서비스, 소셜 네트워킹 등) 제공</p>
+                            <p>- 맞춤형 컨텐츠 및 추천 기능 제공</p>
+                            <p>- 삼성이 제공하는 기타 서비스와 연동하여 최적화된 서비스를 제공하기 위하여 필요한 경우 그 이용자의 삼성 헬스 이용기록 일부 제공</p>
+                            <p>- 프로모션을 위한 푸쉬 메시지 전송(단, 이 경우 이용자에게 별도로 안내하고 동의를 얻습니다. 이용자는 수신 여부를 삼성 헬스 설정에서 언제든 바꿀 수
+                                있습니다.)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">개인정보의 보유 및 이용기간</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>원칙적으로, 회사는 서비스 탈퇴 등 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우, 회사는
+                    아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다. 이 경우 회사는 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+            </div>
+
+            <div class="sub-table-1">
+                <table>
+                    <tr>
+                        <th class="th-detail-item">보유 항목</th>
+                        <th class="th-detail-item">보유 기간</th>
+                        <th class="th-detail-item">법적 근거</th>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">계약 또는 청약철회 등에 관련 기록</td>
+                        <td class="td-detail-content">5년</td>
+                        <td class="td-detail-content">전자상거래 등에서의 소비자보호에 관한 법률</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-detail-content">대금결제 및 재화 등의 공급에 관한 기록</td>
+                        <td class="td-detail-content">5년</td>
+                        <td class="td-detail-content">전자상거래 등에서의 소비자보호에 관한 법률</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-detail-content">소비자의 불만 또는 분쟁처리에 관한 기록</td>
+                        <td class="td-detail-content">3년</td>
+                        <td class="td-detail-content">전자상거래 등에서의 소비자보호에 관한 법률</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-detail-content">신용정보의 수집/처리 및 이용 등에 관한 기록</td>
+                        <td class="td-detail-content">3년</td>
+                        <td class="td-detail-content">신용정보의 이용 및 보호에 관한 법률</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-detail-content">표시/광고에 관한 기록</td>
+                        <td class="td-detail-content">6개월</td>
+                        <td class="td-detail-content">전자상거래 등에서의 소비자보호에 관한 법률</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="td-detail-content">이용자의 인터넷 등 로그기록/ 이용자의 접속지 추적자료</td>
+                        <td class="td-detail-content">3개월</td>
+                        <td class="td-detail-content">통신비밀보호법</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="td-detail-content">그 외의 통신사실 확인 자료</td>
+                        <td class="td-detail-content">12개월</td>
+                        <td class="td-detail-content">통신비밀보호법</td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">개인정보의 파기 절차 및 파기방법</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p class="sub-title-1">(1) 파기절차</p>
+                <p class="sub-content-1">이용자의 개인정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에
+                    따라(보유 및 이용기간 참조) 일정 기간
+                    저장된 후 파기됩니다. 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되는 이외의 다른 목적으로 이용되지 않습니다.</p>
+                <br>
+                <p class="sub-title-1">(2) 파기방법</p>
+                <p class="sub-content-1">전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나
+                    소각을 통하여 파기합니다.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">수집한 개인정보의 위탁 및 국외이전</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>회사는 서비스 이행을 위해 아래와 같이 개인정보 처리 업무를 외부 전문업체에 위탁하여 처리하고 있습니다. 개인정보 처리위탁은 개별 서비스 별로 그 이행을 위해 필요한 경우에 한해 각
+                    위탁업체에 대해 이루어집니다. 또한 일부 개인정보의 경우 서비스 제공 목적 및 이용자 편의 증진 등을 위하여 국외 업체에 위탁, 보관하고 있습니다.</p>
+
+                <p class="sub-content-1">개인정보의 처리를 위탁하는 경우에는 개인정보 보호의 안전을 기하기 위하여 개인정보보호 관련 지시엄수, 개인정보에 대한 비밀유지, 제3자 제공의
+                    금지 및 사고시의 책임부담, 위탁기간,
+                    처리 종료 후의 개인정보의 반환 또는 파기 등을 명확히 규정하고, 위탁업체가 개인정보를 안전하게 처리하도록 감독합니다. 업체, 위탁하는 업무의 내용이 변경될 경우,
+                    어플리케이션공지사항(또는 서면 ㆍ 이메일 ㆍ 전화 ㆍ SMS 등의 방법으로 개별 공지)을 통하여 알려드리겠습니다.</p>
+
+            </div>
+
+            <div class="sub-table-1">
+                <table>
+                    <tr>
+                        <th class="th-detail-item">수탁업체의 명칭</th>
+                        <th class="th-detail-item">위탁하는 업무의 내용</th>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">슈어엠㈜</td>
+                        <td class="td-detail-content">고객 고지사항 문자메시지 발송 업무</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">삼성에스디에스㈜ 및 협력사 [㈜웨어포인트]</td>
+                        <td class="td-detail-content">시스템 운영</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">씨엠지알피코리아(유) 및 협력사 [㈜케이티엠하우스]</td>
+                        <td class="td-detail-content">이벤트 운영</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">콘센트릭스서비스코리아 유한회사</td>
+                        <td class="td-detail-content">CS 관련 업무</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">메가존 및 수탁사 [㈜메가존클라우드,㈜지금컴퍼니]</td>
+                        <td class="td-detail-content">삼성 클라우드 서비스의 서버시스템 변경 관리 및 유지보수, 운영 관련 소스코드 개발</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Microsoft Korea Inc.</td>
+                        <td class="td-detail-content">클라우드 서버를 운영 및 관리</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Amazon Web Services, Inc.</td>
+                        <td class="td-detail-content">Cloud 환경</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Poland</td>
+                        <td class="td-detail-content">데이터 분석, 통계 분석, 데이터를 이용한 AI 모델 개발</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Brazil</td>
+                        <td class="td-detail-content">데이터 분석, 통계 분석, 데이터를 이용한 AI 모델 개발</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Philippines</td>
+                        <td class="td-detail-content">시스템 운영</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p class="sub-title-1">【국외이전 사항】</p>
+
+            <div class="sub-table-1">
+                <table class="big">
+                    <tr>
+                        <th class="th-detail-item">업체 명칭 및 연락처</th>
+                        <th class="th-detail-item">이전국가</th>
+                        <th class="th-detail-item">이전되는 항목, 일시 및 방법 이전받는 자의 이용목적 및 보유 ㆍ 이용 기간</th>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Amazon Web Services, Inc.
+                            (https://aws.amazon.com/compliance/contact/)
+                        </td>
+                        <td class="td-detail-content">일본, 아일랜드, 미국, 싱가폴, 중국</td>
+                        <td class="td-detail-content">서비스 이용과정에서 수집된 정보는 클라우드 서버에 저장되며, 개인정보 수집 ㆍ 이용목적 달성시까지 보관됩니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Poland (shealtd.pol@samsung.com)</td>
+                        <td class="td-detail-content">폴란드</td>
+                        <td class="td-detail-content">해외 클라우드 서버(AWS)에 원격 접속하여 고객의 서비스 이용 기간 동안 서비스 개선을 위해 서비스 이용에 대한 분석
+                            및 통계를 진행합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Brazil (shealtd.br@samsung.com)</td>
+                        <td class="td-detail-content">브라질</td>
+                        <td class="td-detail-content">해외 클라우드 서버(AWS)에 원격 접속하여 고객의 서비스 이용 기간 동안 서비스 개선을 위해 서비스 이용에 대한 분석
+                            및 통계를 진행합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Samsung R&D Institute Philippines (privacyph@samsung.com)</td>
+                        <td class="td-detail-content">필리핀</td>
+                        <td class="td-detail-content">해외 클라우드 서버(AWS)에 원격 접속하여 고객의 서비스 이용 기간 동안 서비스 제공을 위한 시스템을 운영 ㆍ
+                            관리합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Microsoft Korea Inc. (Mskoreaprivacy@generalagent.co.kr)</td>
+                        <td class="td-detail-content">아일랜드, 미국, 싱가폴, 중국</td>
+                        <td class="td-detail-content">개인정보 보관기간 동안 개인정보가 보관된 클라우드 서버를 운영 및 관리합니다.</td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">제3자에게의 개인정보 제공</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p>이용자는 삼성 헬스 플랫폼을 사용하는 제3자 서비스 제공자들이 제공하는 어플리케이션 등을 다운로드 받아 사용할 수 있습니다. 이러한 과정에서 삼성 헬스와 제3자의 서비스가 연계되어
+                    제공될 경우, 회사는 수집된 개인정보를 제3자 서비스의 이용을 위해 필요한 범위 내에서 이용자의 명시적인 동의를 얻은 후에 제3자에게 제공할 수 있습니다. (제3자의 서비스 또한,
+                    제3자가 이용자에게서 적법하게 수집한 개인정보를 필요한 범위 내에서 이용자의 명시적인 동의를 얻은 후에 동의받은 범위 내에서만 당사에 제공할 수 있습니다.)</p>
+
+                <p class="sub-content-1">상세한 서비스제공자/제공업체명, 제공되는 개인정보 항목에 관한 내용은, 제3자 연결 어플리케이션 서비스를 설치하거나 실행하는 시점에서 별도로
+                    이용자에게 고지하오니, 반드시 관련
+                    내용을 확인하여 동의하신 후 사용하시기 바랍니다.</p>
+                <p class="sub-content-1">그밖에 회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+
+                <p class="sub-content-1">- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</p>
+                <p>- 유료 서비스 제공에 따른 요금 정산을 위하여 필요한 경우</p>
+                <p>- 통계작성, 학술연구나 시장조사를 위해 특정 개인을 식별할 수 없는 형태로 가공하여 제공하는 경우</p>
+                <p>- 이용자들이 사전에 동의한 경우</p>
+
+            </div>
+
+            <div class="sub-table-1">
+                <table>
+                    <tr>
+                        <th class="th-detail-item">제공받는 자</th>
+                        <th class="th-detail-item">제공되는 개인정보</th>
+                        <th class="th-detail-item">제공받는 자의 이용목적</th>
+                        <th class="th-detail-item">보유 및 이용기간</th>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">삼성웰스토리㈜</td>
+                        <td class="td-detail-content">일일 걸음 수 요약, 물 섭취량, 운동, 음식 섭취량, 음식 정보, 사용자 프로필</td>
+                        <td class="td-detail-content"><p>프로필 정보를 바탕으로 한 음식 추천 및 코칭 기능 제공</p>
+                            <p>물 섭취량, 운동, 음식 섭취량, 음식 정보데이터를 통한 음식 추천 및 코칭 서비스에 제공</p>
+                            <p>걸음 수 데이터를 기반으로 한 걷기 서비스 제공</p></td>
+                        <td class="td-detail-content">서비스 종료시까지</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">㈜메디에이지</td>
+                        <td class="td-detail-content">혈당, 혈압, 일일 걸음 수 요약</td>
+                        <td class="td-detail-content"><p>기존 서비스의 개선 및 신규 서비스 개발</p>
+                            <p>서비스 이용에 대한 분석 및 통계</p>
+                            <p>이용자 개인의 건강검진 제공 서비스</p>
+                            <p>이용자 개인의 건강 정보를 바탕으로 사후관리 서비스</p>
+                            <p>맞춤형 컨텐츠 및 추천 기능 제공</p></td>
+                        <td class="td-detail-content">사후관리 서비스 종료 시까지</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">㈜삼성화재</td>
+                        <td class="td-detail-content">일일 걸음 수 요약, 운동</td>
+                        <td class="td-detail-content"><p>서비스 이용자격 확인</p>
+                            <p>서비스 이용인증</p>
+                            <p>서비스 제공과 변경 및 이를 위한 통계 분석</p>
+                            <p>서비스 개발과 변경 및 이를 위한 통계 분석</p>
+                            <p>보험료 결제</p>
+                            <p>포인트몰 이용</p></td>
+                        <td class="td-detail-content">서비스 이용 시까지</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">Under Armour, Inc.</td>
+                        <td class="td-detail-content">사용자 프로필 운동기록</td>
+                        <td class="td-detail-content">Under Armour의 서비스를 삼성헬스와 연동할 경우, 연동 서비스에서 기록을 표시하는데 사용</td>
+                        <td class="td-detail-content">서비스 종료시까지</td>
+                    </tr>
+                    <tr>
+                        <td class="td-detail-content">㈜네오드림스</td>
+                        <td class="td-detail-content">일일 걸음 수 요약, 오른 층 수, 운동, 수면, 사용자 프로필, 걸음 수 기록</td>
+                        <td class="td-detail-content"><p>프로필 정보를 바탕으로 다양한 건강 증진 프로그램 안내</p>
+                            <p>걸음 수 데이터를 기반으로 인한 걷기 서비스 제공</p>
+                            <p>오른 층 수 기반 경쟁 기능 제공</p>
+                            <p>수면, 운동 기록 여부에 따른 포인트 지급</p></td>
+                        <td class="td-detail-content">서비스 탈퇴 및 퇴사 시 7일 후 정보 삭제</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <p class="sub-title-1">【국외이전 사항】</p>
+            <div class="sub-content-1">
+                <p>-제공받는 자: Under Armour, Inc.</p>
+                <p>-제공받는 자의 연락처: https://account.underarmour.com</p>
+                <p>-제공되는 개인정보: 사용자 프로필, 운동기록</p>
+                <p>-제공받는 자의 이용목적: Under Armour의 서비스에서 기록을 표시하는데 사용</p>
+                <p>-보유 및 이용기간: 서비스 종료 시까지</p>
+                <p>-이전일시 및 방법: 모바일에서 삼성헬스를 Under Armour 와 연동 시 네트워크를 통한 전송</p>
+                <p>-이전되는 국가: 미국</p>
+                <p>상기 서비스 제공 업체에게 제공한 개인정보 항목은 서비스 제공 업체의 개인정보관리 방침 하에서 관리 됩니다.</p>
+            </div>
+            <p class="sub-content-1">이상에 기재된 업체는 추후 변동될 수 있습니다. 업체가 변경되거나, 또는 기재된 내용 외에 이용자의 개인정보를 제공하거나 공유하는 경우에는 이에 대한
+                별도 이용자 동의를 구하는
+                절차를 거쳐 제공합니다.</p>
+
+
+        </div>
+    </div>
+
+
+    <div class="item-panel">
+        <div class="item-title-icon-panel">
+            <div class="item-title-panel">
+                <span class="item-title">기타 개인정보 처리에 관한 방침</span>
+            </div>
+            <div class="item-icon-panel">
+                <img class="arrow-button" type="down"
+                     src="https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png"></img>
+            </div>
+        </div>
+        <div class="item-more-information">
+            <div class="sub-content-1 only">
+                <p class="sub-title-1">(1) 개인정보 보호를 위한 기술적, 관리적 조치</p>
+                <p class="sub-content-1">- 내부관리계획의 수립 및 시행 회사는 이용자의 개인정보를 처리함에 있어 개인정보가 분실, 도난, 유출, 변조 또는 훼손되지 않도록 안전성
+                    확보를 위하여 다음과 같은 기술적, 관리적
+                    조치를 강구하고 있습니다.</p>
+                <p>ㆍ회사는 개인정보의 안전한 처리를 위하여 내부관리계획을 수립하고 시행하고 있습니다.</p>
+                <p>ㆍ회사는 사내 개인정보보호 전담기구 등을 통해 개인정보보호조치의 이행사항 및 담당자의 준수여부를 확인하여 문제 발견 시 즉시 시정 조치하도록 하고 있습니다.</p>
+                <p class="sub-content-1">- 접근통제장치의 설치 및 운영</p>
+                <p>ㆍ회사는 침입차단시스템을 이용하여 외부로부터 무단 접근을 통제하고 있으며, 기타 시스템적으로 보안성을 확보하기 위하여 가능한 모든 기술적 장치를 갖추려 노력하고 있습니다.</p>
+                <p class="sub-content-1">- 접속기록의 위조, 변조 방지를 위한 조치</p>
+                <p>ㆍ회사는 개인정보처리시스템에 접속한 기록을 보관, 관리하고 있으며, 접속기록이 위조, 변조되지 않도록 보안기능을 사용하고 있습니다.</p>
+                <p class="sub-content-1">- 개인정보의 암호화</p>
+                <p>ㆍ이용자의 개인정보는 비밀번호에 의해 보호되며, 파일 및 전송 데이터를 암호화하거나 파일 잠금기능(Lock)을 사용하여 저장, 관리되며, 중요한 데이터는 별도의 보안기능을 통해
+                    보호되고 있습니다.</p>
+                <p class="sub-content-1">- 해킹 등에 대비한 대책</p>
+                <p>ㆍ회사는 백신프로그램을 이용하여 컴퓨터바이러스에 의한 피해를 방지하기 위한 조치를 취하고 있습니다. 백신프로그램은 주기적으로 업데이트되며 갑작스런 바이러스가 출현할 경우 백신이
+                    나오는 즉시 이를 제공함으로써 개인 정보가 침해되는 것을 방지하고 있습니다.</p>
+                <p>ㆍ회사는 암호알고리즘을 이용하여 네트워크 상의 개인정보를 안전하게 전송할 수 있는 보안장치(SSL)를 채택하고 있습니다.</p>
+                <p>ㆍ해킹 등 외부침입에 대비하여 각 서버마다 침입차단시스템 및 취약점 분석 시스템 등을 이용하여 보안에 만전을 기하고 있습니다.</p>
+                <p>ㆍ개인정보와 일반 데이터를 혼합하여 보관하지 않고 별도의 서버를 통해 분리하여 보관하고 있습니다.</p>
+                <p class="sub-content-1">- 취급 직원의 최소화 및 교육</p>
+                <p>ㆍ회사는 이용자의 개인정보에 대한 접근권한을 이용자를 직접 상대로 하여 마케팅 업무를 수행하는 자, 개인정보보호책임자 및 담당자 등 개인정보관리업무를 수행하는 자, 기타 업무상
+                    개인정보의 취급이 불가피한 자로 제한 하고 있습니다.</p>
+                <p>ㆍ개인정보를 취급하는 직원을 대상으로 새로운 보안 기술 습득 및 개인정보 보호 의무 등에 관해 정기적인 사내 교육 및 외부 위탁교육을 실시하고 있습니다.</p>
+                <p>ㆍ입사시 전 직원의 보안서약서를 통하여 사람에 의한 정보유출을 사전에 방지하고 개인정보보호정책에 대한 이행사항 및 직원의 준수여부를 감사하기 위한 내부절차를 마련하고
+                    있습니다.</p>
+                <p>ㆍ개인정보 관련 취급자의 업무 인수인계는 보안이 유지된 상태에서 철저하게 이뤄지고 있으며 입사 및 퇴사후 개인정보 사고에 대한 책임을 명확화하고 있습니다.</p>
+                <p>ㆍ전산실 및 자료 보관실 등을 특별 보호구역으로 설정하여 출입을 통제하고 있습니다.</p>
+                <br>
+                <p class="sub-title-1">(2) 링크사이트 제공 방침</p>
+                <p class="sub-content-1">회사는 이용자에게 다른 회사의 웹사이트 또는 자료에 대한 링크를 제공할 수 있으며, 삼성서비스를 통해 제3자가 개발한 제품 및 서비스를 사용할
+                    수 있습니다(예를 들어, 삼성앱스를
+                    통해 제3자가 개발한 어플리케이션을 다운로드 받아 사용하는 경우 등). 이 경우 회사는 제3자의 사이트, 자료, 제품 및 서비스에 대한 아무런 통제권이 없으므로 그로부터 제공받는
+                    제품 및 서비스나 자료의 유용성에 대해 책임질 수 없으며 보증할 수 없습니다. 회사가 포함하고 있는 링크를 클릭(click)하여 타 사이트(site)의 페이지로 옮겨갈 경우 해당
+                    사이트의 개인정보보호정책은 회사와 무관하므로 새로 방문한 사이트의 정책을 검토해 보시기 바랍니다.</p>
+                <br>
+                <p class="sub-title-1">(3) 게시물 운영 방침</p>
+                <p class="sub-content-1">회사는 이용자의 게시물을 소중하게 생각하며 변조, 훼손, 삭제되지 않도록 최선을 다하여 보호합니다. 그러나 다음의 경우는 그렇지
+                    아니합니다.</p>
+                <br>
+                <p>- 스팸(spam)성 게시물</p>
+                <p>- 타인을 비방할 목적으로 허위 사실을 유포하여 타인의 명예를 훼손하는 게시물</p>
+                <p>- 동의 없는 타인의 신상공개 게시물</p>
+                <p>- 회사 또는 제3자의 지적재산권 등 권리를 침해하는 내용의 게시물</p>
+                <p>- 기타 게시판 주제와 다른 내용의 게시물</p>
+                <p class="sub-content-1">회사는 바람직한 게시판 문화를 활성화하기 위하여 동의 없는 타인의 신상 공개시 특정 부분을 삭제하거나 기호 등으로 수정하여 게시할 수 있으며,
+                    다른 주제의 게시판으로 이동 가능한
+                    내용일 경우 해당 게시물에 이동 경로를 밝혀 오해가 없도록 하고 있습니다.</p>
+                <p>그 외의 경우 명시적 또는 개별적인 경고 후 삭제 조치할 수 있습니다.</p>
+
+                <p class="sub-content-1">근본적으로 게시물에 관련된 제반 권리와 책임은 작성자 개인에게 있습니다. 이용자는 제 3자의 지식 재산권 침해, 관련 법령의 위반 및 허용되지
+                    않은 상업적인 활동 등 기타
+                    불법적이거나 유해한 활동을 하지 않을 것을 보증합니다. 또 게시물을 통해 자발적으로 공개된 정보는 보호받기 어려우므로 정보 공개 전에 심사 숙고하시기 바랍니다.</p>
+                <br>
+                <p class="sub-title-1">(4) 이메일 무단수집 거부 방침</p>
+                <p class="sub-content-1">회사는 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단 수집되는 것을 거부합니다. 이를 위반 시
+                    「정보통신망 이용촉진 및 정보보호 등에 관한
+                    법률」등에 의해 처벌 받을 수 있습니다.</p>
+                <br>
+                <p class="sub-title-1">(5) 광고성 정보의 전송</p>
+                <p class="sub-content-1">회사는 이용자의 사전 동의 없이 영리목적의 광고성 정보를 전송하지 않습니다.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="pn-footer">
+        <div id="pn-date">
+            <div id="pn-posted-date" class="date-text">
+                <span>개인정보처리방침 버전번호 : ver.2.5</span>
+            </div>
+            <div id="pn-effective-date" class="date-text">
+                <span>개인정보처리방침 시행일자 : 2021년 4월 5일</span>
+            </div>
+        </div>
+        <div id="previous-version">
+            <div id="previous-version-button">이전버전</div>
+        </div>
+    </div>
 </div>
-
-<button type="button" class="collapsible">2.개인정보의 수집∙이용 목적 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 수집한 개인정보를 다음의 목적을 위해 사용합니다.</p>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-        <th>목적</th>
-        <th class="last">자세한 내용</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">① 회원관리 및 본인확인</td>
-            <td class="text-l last">- 이용자 식별, 회원 가입/탈퇴 의사의 확인, 연령 확인 및 법정대리인 동의 진행, 이용자 또는 법정대리인의 본인 확인
-                <br>- 서비스 부정 이용행위 등 방지, 민원 기타 이용자 요청사항 처리
-                <br>- 공지사항 등 전달
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">② 서비스 제공</td>
-            <td class="text-l last">- 상품, 서비스 및 콘텐츠의 제공, 구매 및 요금 결제, 상품 배송
-                <br>- 포인트 적립 및 사용
-                <br>- 이용자에게 최적화된 서비스 제공 (이용자의 기존 사용이력에 기반한 맞춤형 콘텐츠 및 추천 정보 등 제공)
-                <br>- 이용자가 구매한 상품∙서비스에 대한 AS, 업데이트 정보 등 제공
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">③ 서비스 개선 및 개발</td>
-            <td class="text-l last">- 고객만족 조사, 제품/서비스 이용에 대한 분석 및 통계, 시장 트렌드 분석, 기존 서비스 개선, 신규 서비스 기획∙연구∙개발
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">④ 마케팅∙광고 등에 활용</td>
-            <td class="text-l last">- 이벤트∙프로모션 등 마케팅 정보 제공 및 경품 배송, 인구통계학적 특성 또는 관심사 기반 마케팅 전송 및 광고 게재</td>
-        </tr>
-        <tr>
-            <td class="text-c">⑤ 구매상담 및 고객문의 응대</td>
-            <td class="text-l last">- 상담 접수 및 답변 제공, 문의 내역 관리</td>
-        </tr>
-        </tbody>
-    </table>
-
-</div>
-
-<button type="button" class="collapsible">3.개인정보의 제3자 제공<i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 원칙적으로 이용자의 동의 없이 개인정보를 외부에 제공하지 않습니다. 다만, 아래의 경우는 예외로 합니다.</p>
-    <ul>
-        <li>법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</li>
-        <li>서비스 제공에 따른 요금 정산을 위하여 필요한 경우</li>
-    </ul>
-    <p>회사는 이용자의 동의를 받아 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.</p>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-        <th>제공받는 자</th>
-        <th>제공되는 개인정보</th>
-        <th>제공받는 자의 이용목적</th>
-        <th class="last">보유 및 이용기간</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        </tbody>
-    </table>
-    <br>
-    <p>국외의 제3자에게 개인정보를 제공하는 현황은 다음과 같습니다.</p>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-        <th>제공받는 자</th>
-        <th>연락처</th>
-        <th>이전되는 항목</th>
-        <th>이전국가, 일시 및 방법</th>
-        <th class="last">이전받는 자의 이용 목적 및 보유∙이용 기간</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <p>위에 기재된 사항은 추후 변동될 수 있습니다. 위 제3자 제공 내용 중 변경사항이 있거나, 그외 추가적인 개인정보의 제공이 발생하는 경우 별도로 이용자 동의를 구한 후 개인정보를
-        제공하겠습니다.</p>
-</div>
-
-<button type="button" class="collapsible">4.개인정보의 처리위탁 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 편리하고 더 나은 서비스를 제공하기 위해 다음과 같이 개인정보의 처리 업무를 외부 전문 업체에 위탁합니다.</p>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-        <th>수탁업체의 명칭</th>
-        <th class="last">위탁하는 업무의 내용</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        </tbody>
-    </table>
-    <br>
-    <p>국외에 처리위탁하는 현황은 다음과 같습니다</p>
-    <table class="tbl-type2 g_font_kr" cellpadding="0" cellspacing="0">
-        <thead>
-        <th>업체 명칭</th>
-        <th>연락처</th>
-        <th>이전되는 항목</th>
-        <th>이전 국가, 일시 및 방법</th>
-        <th class="last">이전받는 자의 이용 목적 및 보유∙이용 기간</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-c">-</td>
-            <td class="text-l last">-</td>
-        </tr>
-        </tbody>
-    </table>
-    <br>
-    <p>회사는 개인정보의 처리 위탁 시, 개인정보가 안전하게 보호될 수 있도록 수탁업체와 위탁업무 수행목적 외 개인정보 처리금지, 기술적∙관리적 보호조치, 재위탁 제한, 위탁업무 종료
-        후 개인정보의 반환 또는 파기 의무, 그리고 손해배상 등 책임에 관한 사항을 명시한 계약을 체결하고, 수탁업체가 개인정보를 안전하게 처리하도록 감독하고 있습니다.</p>
-    <p>회사는 수탁업체나 위탁 업무의 내용이 변경될 경우, 이를 본 개인정보 처리방침을 통하여 공개(또는 개별 공지)하겠습니다.</p>
-</div>
-
-<button type="button" class="collapsible">5.개인정보의 파기 <i class="arrow"></i></button>
-<div class="content">
-
-    <p>회사는 원칙적으로 회원 탈퇴 등 개인정보의 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
-        <br>단, 다음과 같이 다른 법령에 따라 일정 기간 개인정보를 계속 보존하여야 하는 경우, 회사는 해당 기간 동안 개인정보를 안전하게 보존 후 파기합니다.</p>
-    <table>
-        <thead>
-        <th>보유 항목</th>
-        <th>보유 기간</th>
-        <th class="last">법적 근거</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">계약 또는 청약철회 등에 관한 기록
-            </td>
-            <td class="text-c">5년</td>
-            <td class="text-l last">전자상거래 등에서의 소비자보호에 관한 법률
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">대금결제 및 재화 등의 공급에 관한 기록
-            </td>
-            <td class="text-c">5년</td>
-            <td class="text-l last">전자상거래 등에서의 소비자보호에 관한 법률
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">소비자의 불만 또는 분쟁처리에 관한 기록
-            </td>
-            <td class="text-c">3년</td>
-            <td class="text-l last">전자상거래 등에서의 소비자보호에 관한 법률
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">신용정보의 수집/처리 및 이용 등에 관한 기록
-            </td>
-            <td class="text-c">3년</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">표시/광고에 관한 기록
-            </td>
-            <td class="text-c">6개월</td>
-            <td class="text-l last">전자상거래 등에서의 소비자보호에 관한 법률
-            </td>
-        </tr>
-        <tr>
-            <td class="text-c">이용자의 인터넷 등 로그 기록 / 이용자의 접속지 추적자료</td>
-            <td class="text-c">3개월</td>
-            <td class="text-l last">통신비밀보호법</td>
-        </tr>
-
-        <tr>
-            <td class="text-c">그 외의 통신사실 확인 자료</td>
-            <td class="text-c">12개월</td>
-            <td class="text-l last">통신비밀보호법</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <p>개인정보의 파기 절차 및 파기 방법은 다음과 같습니다.</p>
-    <h4>(1) 파기 절차</h4>
-    <p>이용자의 개인정보는 목적이 달성된 후 내부 방침에 따라 지체 없이 파기됩니다. 다른 법령에 따라 보존이 필요한 개인정보의 경우 별도의 데이터베이스(DB)로 옮기거나
-        보관 장소를 달리하여 법정 기간 동안 보존 후 지체 없이 파기합니다.</p>
-
-    <h4>(2) 파기 방법</h4>
-    <p>회사는 전자적 파일 형태로 저장된 개인정보의 경우 기록을 재생할 수 없는 기술적 방법을 사용하여 파기하며, 종이에 출력된 개인정보는 분쇄나 소각을 통해 파기합니다.</p>
-
-
-</div>
-
-<button type="button" class="collapsible">6.이용자 및 법정대리인의 권리 및 그 행사 방법 <i class="arrow"></i></button>
-<div class="content">
-
-    <p>이용자 본인(이용자가 만14세 미만자인 경우, 그 법정대리인)은 회사에 대해 언제든지 개인정보의 열람, 정정·삭제, 처리정지, 또는 동의 철회를 요청할 수 있습니다. 이를 위하여 다음과 같은
-        방법을 이용하실 수 있습니다.</p>
-    <ul>
-        <li>웹페이지/앱/서비스의 개인정보 설정 메뉴를 이용하는 방법</li>
-        <li>삼성 프라이버시 포털(https://privacy.samsung.com)을 이용하는 방법</li>
-        <li>대표전화(1588-4730)를 이용하는 방법</li>
-        <li>고객지원 담당부서나 개인정보 보호책임자에게 연락하는 방법(아래 7.번 목차 내용 참조)</li>
-    </ul>
-    </ul>
-    <p>다만, 개인정보보호법 등 관련 법령에 따라 일부 권리행사가 제한되는 경우가 있을 수 있습니다.</p>
-
-
-</div>
-
-<button type="button" class="collapsible">7.개인정보 보호책임자 및 고객 지원 담당 부서 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 이용자의 개인정보를 보호하고 개인정보와 관련한 불편사항을 개선하기 위하여 아래와 같이 담당 부서 및 개인정보 보호책임자를 지정하고 있습니다.</p>
-    <p>이용자는 고객 지원 담당 부서 및 개인정보 보호책임자에게 본인의 개인정보에 관한 권리 행사를 요청할 수 있음은 물론, 회사의 서비스를 이용하며 발생한 개인정보 보호와 관련된 모든 민원을 신고할 수
-        있습니다. 회사는 이용자의 신고사항에 대해 신속하고 충분한 답변을 드릴 것입니다.</p>
-
-    <h4>(1) 고객 지원 담당 부서</h4>
-    <ul>
-        <li>고객 지원 담당 부서 : 삼성전자 00사업부 00팀 00그룹</li>
-        <li>전화 : 문의가 가능한 전화번호</li>
-        <li>문의처 : 문의가 가능한 이메일 주소</li>
-    </ul>
-
-
-    <h4>(2) 개인정보 보호책임자 및 개인정보 보호 담당 부서</h4>
-    <ul>
-        <li>개인정보 보호책임자 : 개인정보보호사무국장</li>
-        <li>개인정보 보호 담당 부서 : 개인정보보호사무국</li>
-        <li>전화 : 1588-4730</li>
-        <li>문의처 : privacy.sec@samsung.com</li>
-    </ul>
-
-
-    <h4>(3) 기타 기관</h4>
-    <p>기타 개인정보 침해에 대해 신고나 상담이 필요한 경우에는 아래 기관에 문의하시기 바랍니다.</p>
-    <ul>
-        <li>개인정보침해 신고센터 (https://privacy.kisa.or.kr / 국번 없이 118)</li>
-        <li>대검찰청 과학수사부 사이버수사과 (http://cybercid.spo.go.kr / 국번 없이 1301)</li>
-    </ul>
-
-</div>
-
-<button type="button" class="collapsible">8.개인정보 자동 수집 장치의 설치, 운영, 거부에 관한 사항 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 이용자의 정보를 수시로 저장하고 찾아내는 ‘쿠키(cookie)’ 등을 사용합니다. 쿠키란 회사의 웹사이트 운영에 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로, 이용자의
-        컴퓨터 하드디스크에 저장됩니다.</p>
-
-    <h4>(1) 쿠키 사용 목적</h4>
-    <ul>
-        <li>회사는 자동로그인 기능 구현, 회원과 비회원의 접속 빈도나 방문 시간 등 분석, 이용자의 취향과 관심분야 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 횟수 파악 등을 통한
-            타겟 마케팅 및 개인 맞춤 서비스 제공의 목적으로 쿠키 등을 사용합니다.
-        </li>
-    </ul>
-
-    <h4>(2) 쿠키 설정 방법</h4>
-    <ul>
-        <li>이용자는 쿠키 설치 여부를 선택할 수 있습니다. 사용 중인 웹브라우저의 설정 메뉴를 통해 쿠키 허용 수준을 변경하거나, 모든 쿠키의 저장을 거부(인터넷 익스플로러 11.0 : 도구
-            > 인터넷옵션 > 개인정보)할 수 있습니다. 단, 이용자가 쿠키 설치를 거부할 경우 일부 서비스 제공에 어려움이 있을 수 있습니다.
-        </li>
-    </ul>
-
-</div>
-
-<button type="button" class="collapsible">9.가명정보의 처리 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 다음과 같이 가명정보를 처리하고 있습니다.</p>
-    <table>
-        <thead>
-        <th>구분</th>
-        <th class="last">자세한 내용</th>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="text-c">① 가명정보의 처리목적</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">② 가명정보의 처리 및 보유기간</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">③ 가명정보의 제3자 제공</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">④ 가명정보 처리의 위탁</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">⑤ 가명처리하는 개인정보의 항목</td>
-            <td class="text-l last">-</td>
-        </tr>
-        <tr>
-            <td class="text-c">⑥ 가명정보의 안전성 확보조치</td>
-            <td class="text-l last">-</td>
-        </tr>
-        </tbody>
-    </table>
-
-</div>
-
-<button type="button" class="collapsible">10.개인정보의 안전한 보호를 위한 조치 <i class="arrow"></i></button>
-<div class="content">
-    <p>회사는 고객의 개인정보를 안전하게 보호하기 위하여 다음과 같은 보호조치를 포함한 다양한 노력을 하고 있습니다.</p>
-    <ul>
-        <li>관리적 조치 : 내부관리계획 수립 및 시행, 개인정보 교육 실시 등
-        </li>
-        <li>기술적 조치 : 개인정보에 대한 접근통제 장치 운영 및 접근 권한 제한, 개인정보 처리시스템의 접속기록 보관 및 위조/변조를 방지하기 위한 보안기능 사용, 개인정보의 암호화, 백신 프로그램
-            및 보안 프로그램 설치 등
-        </li>
-        <li>물리적 조치 : 전산실, 자료보관실 등의 접근통제
-        </li>
-    </ul>
-
-</div>
-
-<button type="button" class="collapsible">11.개인정보처리방침의 변경 <i class="arrow"></i></button>
-<div class="content">
-    <p>본 개인정보처리방침은 처리하는 개인정보 내용 등에 변동사항이 있을 경우 언제든지 변경될 수 있습니다.
-        회사는 개인정보처리방침의 변경이 있을 경우, 최소 7일 전에 공지사항 등을 통해 사전 공지를 할 것입니다.
-    </p>
-    <p>
-        개인정보처리방침 버전 번호 : v 1.0
-    </p>
-    <p>개인정보처리방침 시행 일자 : 20XX년 XX월 XX일
-    </p>
-
-</div>
-
-<select id="version-select" class="version">
-    <option value="">이전 버젼 확인하기</option>
-    <option value="dog">2021.6.5</option>
-    <option value="cat">2020.1.8</option>
-    <option value="hamster">2016.11.24</option>
-    <option value="parrot">2015.6.5</option>
-    <option value="spider">2014.7.12</option>
-    <option value="goldfish">2012.2.15</option>
-</select>
-
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+    window.onload = () => {
+        const arrowButtons = document.getElementsByClassName('item-title-icon-panel');
+        for (let i = 0; i < arrowButtons.length; ++i) {
+            arrowButtons[i].addEventListener('click', (e) => {
+                const arrowImgElement = e.target.querySelector('.arrow-button');
+                const currentType = arrowImgElement.getAttribute('type');
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            this.getElementsByTagName('i')[0].classList.toggle('down');
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
+                const itemPanel = e.target.closest('.item-panel');
+                const itemMoreInformation = itemPanel.querySelector('.item-more-information')
+                let buttonSrc;
+                let buttonType;
+                let moreDisplay;
+                let height;
+                let overflow;
+                if (currentType == 'down') {
+                    buttonSrc = 'https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/up-icon.png';
+                    buttonType = 'up';
+                    moreDisplay = 'block';
+                    height = `${itemMoreInformation.scrollHeight}px`;
+                    overflow = 'hidden';
+                } else {
+                    buttonSrc = 'https://stg-quickaccess.internet.apps.samsung.com/ys0888.kim/pn/images/down-icon.png';
+                    buttonType = 'down';
+                    moreDisplay = 'none';
+                    height = null;
+                    overflow = 'auto';
+                }
+                //itemMoreInformation.style.display = moreDisplay;
+                itemMoreInformation.style.maxHeight = height;
+                itemMoreInformation.style.overflow = overflow;
+                arrowImgElement.src = buttonSrc;
+                arrowImgElement.setAttribute('type', buttonType);
+            });
+        }
+    };
 </script>
-
 </body>
 </html>
