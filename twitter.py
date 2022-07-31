@@ -6,6 +6,7 @@ import json
 from ratelimit import limits, sleep_and_retry
 
 from loguru import logger
+logger.add("file_{time}.log", rotation="1 week")
 
 import re
 import datetime
@@ -14,9 +15,6 @@ from googletrans import Translator
 import telegram
 
 import time
-
-logger.add("tweet_trans_{time}.log", rotation="1 week")
-
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 bearer_token = r"AAAAAAAAAAAAAAAAAAAAAPQzbQEAAAAAl2V1uePmjnqKre%2B423hWmiwUnCc%3DQhrpyUDovTPxkusIpXq3VGjAHboWn3SiKhO37IdB3M139TJb1o"#os.environ.get("BEARER_TOKEN")
@@ -212,6 +210,8 @@ def main():
                 # 트윗이 발생
                 if tweet_raw:
                     tweet_raw = json.loads(tweet_raw)
+                    if 'connection_issue' in tweet_raw:
+                        raise
                     logger.debug("Tweet raw: {}".format(tweet_raw))
                     # users = [{'id': '1549663522170101760', 'name': 'Gyeongmin Kim', 'username': 'GyeongminKim16'}, {'id': '34442404', 'name': 'Sony', 'username': 'Sony'}]
                     users = tweet_raw['includes']['users']        
@@ -241,6 +241,7 @@ def main():
         except Exception:
             logger.exception("Error:", exc_info=True)
             stream_response.close()
+            logger.debug("Close stream_response.")
             time.sleep(5)
 
 if __name__ == "__main__":
