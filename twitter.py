@@ -14,6 +14,9 @@ from googletrans import Translator
 import telegram
 
 import time
+
+logger.add("tweet_trans_{time}.log", rotation="1 week")
+
 # To set your enviornment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 bearer_token = r"AAAAAAAAAAAAAAAAAAAAAPQzbQEAAAAAl2V1uePmjnqKre%2B423hWmiwUnCc%3DQhrpyUDovTPxkusIpXq3VGjAHboWn3SiKhO37IdB3M139TJb1o"#os.environ.get("BEARER_TOKEN")
